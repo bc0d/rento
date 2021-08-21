@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Rento-Register</title>
+
+   <% include partials/extlinks %>
+
+</head>
+
+<body>
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Registration</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-10 ml-5">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="cart-page-heading mb-30">
+                            <h5>Step 1</h5>
+                        </div>
+
+                        <form action="/register" method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>First Name <span>*</span></label>
+                                    <input type="text" class="form-control" name="fname" placeholder="first name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Last Name <span>*</span></label>
+                                    <input type="text" class="form-control" name="sname" placeholder="second name" required>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label>Email Address <span>*</span></label>
+                                    <input type="email" class="form-control" name="mail" placeholder="email" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label>Phone Number <span>*</span></label>
+                                    <input type="text" class="form-control" name="phone" placeholder="phone number" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label>Password <span>*</span></label>
+                                    <input type="password" class="form-control" name="fpass" placeholder="enter password" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label>Confirm Password <span>*</span></label>
+                                    <input type="password" class="form-control" name="cpass" placeholder="confirm password" required>
+                                </div>
+                                <div class="col-12">
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" name="chk" class="mr-2" id="policy" required>
+                                        <label >Terms and conitions</label>
+                                    </div>
+                                    
+                                    </div>
+                                     <div class="col-12 mb-3 ml-5 mt-5">
+                                            <input class="btn essence-btn" type="submit" value="Submit">
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+    <!-- ##### Footer Area start ##### -->
+    <% include partials/foothidden %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+<script type="text/javascript">
+    var fpass = document.getElementById("fpass");
+    var cpass = document.getElementById("cpass");
+    function validatePassword() {
+        if (fpass.value != cpass.value) {
+            cpass.setCustomValidity("Password Don't Match");
+        }
+        else {
+            cpass.setCustomValidity('');
+        }
+    }
+    fpass.onchange = validatePassword;
+    cpass.onkeyup = validatePassword;
+    </script>
+</html>

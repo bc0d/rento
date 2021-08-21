@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Rento</title>
+
+    <% include partials/extlinks %>    
+    <!-- style map-->
+    <style type="text/css">
+        
+    </style>
+    <!-- style map end-->
+
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    <!-- ##### Header Area End ##### -->
+
+ 
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Add Product</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-10 ml-5">
+                    <div class="order-details-confirmation">
+
+                        <div class="cart-page-heading">
+                            <h5>Your Product</h5>
+                            <p>The Details</p>
+                        </div>
+                        
+                        <%
+                            pdt_dts.forEach(function(pdt_dts){
+                        %>
+                        <ul class="order-details-form mb-4">
+                            <li><span>Product ID</span> <span><%=pdt_dts.prod_id%></span></li>
+                            <li><span>Category</span> <span><%=pdt_dts.category%></span></li>
+                            <li><span>Product Name</span> <span><%=pdt_dts.pdt_name%></span></li>
+                            <li><span>Rent Amount</span> <span><%=pdt_dts.rent_amt%></span></li>
+                            <li><span>Max Rent Period </span> <span><%=pdt_dts.max_rent_prd%></span></li>
+                            <li><span>Picture 1 </span> <span><img></span></li>
+                            <li><span>Picture 2 </span> <span><img></span></li>
+                            <li><span>Picture 3 </span> <span><img></span></li>
+                            <li><span>Picture 4 </span> <span><img></span></li>
+                        </ul>
+
+                        <div id="accordion" role="tablist" class="mb-4">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingOne">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-circle-o mr-3"></i>Description</a>
+                                    </h6>
+                                </div>
+
+                                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p><%=pdt_dts.descr%></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingTwo">
+                                    <h6 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-circle-o mr-3"></i>Instructions</a>
+                                    </h6>
+                                </div>
+                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p><%=pdt_dts.instr%></p>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="mt-5 ml-5">
+                            <a href="/" class="btn essence-btn" onclick="al()">Confirm</a>
+                         </div>
+                            <%
+                                });
+                            %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script type="text/javascript">
+        
+        function al() {
+            alert ("Product saved!");
+        }
+        </script>
+
+</body>
+
+</html>

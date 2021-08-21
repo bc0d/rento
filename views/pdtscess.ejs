@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>product</title>
+
+  <% include partials/extlinks %>
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- ##### Single Product Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+        <%
+            prodt.forEach(function(prodt) {
+        %>
+
+        <!-- Single Product Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+                <img src="" alt="" name="pdtpic1">
+                <img src="" alt="" name="pdtpic2">
+                <img src="" alt="" name="pdtpic3">
+                <img src="" alt="" name="pdtpic4">
+            </div>
+        </div>
+ 
+        <!-- Single Product Description -->
+        <div class="single_product_desc clearfix">
+            <span><%=prodt.category %></span>
+            <h2 name="pdtnm"><%=prodt.pdt_name %></h2>
+            <p class="product-price" name="pdtrt"><%=prodt.rent_amt %></p>
+            <p class="product-desc" name="pdtdesc"><%=prodt.descr %></p>
+            <p class="product-desc" name="pdtinstr"><%=prodt.instr %></p>
+          
+    </section>
+    <!-- ##### Single Product Details Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+
+</html>

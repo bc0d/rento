@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>product</title>
+
+  <% include partials/extlinks %>
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- ##### Single Product Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+        <%
+            prodt.forEach(function(prodt) {
+        %>
+
+        <!-- Single Product Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+                <img src="<%=prodt.pic1 %>" alt="" name="pdtpic1">
+                <img src="<%=prodt.pic2 %>" alt="" name="pdtpic2">
+                <img src="<%=prodt.pic3 %>" alt="" name="pdtpic3">
+                <img src="<%=prodt.pic4 %>" alt="" name="pdtpic4">
+            </div>
+        </div>
+ 
+        <!-- Single Product Description -->
+        
+        <div class="single_product_desc clearfix">
+            <span><%=prodt.category %></span>
+            <a href="cart.html">
+                <h2 name="pdtnm"><%=prodt.pdt_name %></h2>
+            </a>
+            <p class="product-price" name="pdtrt"><%=prodt.rent_amt %></p>
+            <p class="product-desc" name="pdtdesc"><%=prodt.descr %></p>
+            <!-- Form -->
+            <form action="/prodcart" class="cart-form clearfix" method="post">
+                <!-- Select Box -->
+                
+                <div class="select-box d-flex mt-50 mb-30">
+                    <select name="rent_prd" id="productSize" class="mr-5">
+                        <% for (var i =1; i <=prodt.max_rent_prd;  i++ ) { %>
+
+                        <option value="<%= i %>"><%= i %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <input type="hidden" value="<%=prodt.prod_id%>" name="pid">
+                <!-- Cart & Favourite Box -->
+                <div class="cart-fav-box d-flex align-items-center">
+                    <!-- Cart -->
+                    <input type="submit" class="btn essence-btn" value="Rent&#8594;">
+                    
+                    <!-- Favourite -->
+                    <div class="product-favourite ml-4">
+                        <a href="#" class="favme fa fa-heart"></a>
+                    </div>
+                </div>
+            </form>
+            
+            <p class="product-desc" name="pdtinstr"><%=prodt.instr %></p>
+            <p class="product-desc" name="renter">
+                <span>Renter</span>
+                <%
+                    name.forEach(function(name) {
+                %>
+                <a href="/viewpro?uid=<%=name.user_id%>">
+                    <%=name.f_name%>&nbsp;<%=name.s_name%>
+                </a>
+                <%
+                    });
+                %>
+            </p>
+
+        </div>
+        
+    </section>
+    <section class="col-12 col-md-8 mb-5 mt-5">
+        <form action="/comment" method="post">
+            <div class="ml-5 mb-5">
+                <h4>comment</h4>
+                <input type="hidden" value="<%=prodt.prod_id%>" name="idp">
+                <textarea class="form-control col-10 ml-5" rows="2" name="cmt" style="border: 2px solid #ddd;">
+                </textarea>
+                <div class="col-2 mt-1" style="float:right;">
+                   <input type="submit" value="Post">
+                </div>
+            </div>
+        </form>
+    </section> 
+    <%
+            });
+    %>
+    <section class="col-12 col-md-10 ml-5 mb-5 mt-5">
+        <h4 class="ml-5">Reviews</h4>
+        <% cmt.forEach(function(cmt){ %>
+            <div class="ml-5 mt-5">
+                
+                <div class="col-10 ml-5 mb-2" style="border-radius: 25px;border: 2px solid #ff0066;padding: 20px;width: inherit;height: auto;">
+                    <h6><%=cmt.user_id%></h6>
+                    <div class="col-10 ml-5" style="border-radius: 15px 50px 30px;border: 1px solid #bbb;background: #ddd;padding: 20px;width: inhetit;height: auto;"><%=cmt.cmt%>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </section>
+    <!-- ##### Single Product Details Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+
+</html>

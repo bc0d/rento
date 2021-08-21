@@ -1,0 +1,196 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RENTO</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% include partials/exturl %>
+
+
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <% include partials/sidepanel %>
+ 
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+         <% include partials/header %>
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Forms</a></li>
+                            <li class="active">Basic</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Basic Form</strong> Elements
+                            </div>
+                            <div class="card-body card-block">
+                                <form action="/test" method="post" name="f1" enctype="multipart/form-data">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="select" class=" form-control-label">Category</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <select name="cate" id="select" class="form-control" required>
+                                                <option value="0">Please select</option>
+                                                <option value="1">Machinary</option>
+                                                <option value="2">Electronics</option>
+                                                <option value="3">Vehicles</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Product Name</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" name="prod_name" placeholder="name" class="form-control" required>
+                                            <small class="form-text text-muted">Name of the product</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="textarea-input" class=" form-control-label">Description</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="prod_desc" id="textarea-input" rows="9" placeholder="Description of product..." class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="file-input" class=" form-control-label">Product Image 1</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="file-input" name="prod_img1" class="form-control-file" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="file-input" class=" form-control-label">Product Image 2</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="file-input" name="prod_img2" class="form-control-file" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="file-input" class=" form-control-label">Product Image 3</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="file-input" name="prod_img3" class="form-control-file" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="file-input" class=" form-control-label">Product Image 4</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="file-input" name="prod_img4" class="form-control-file" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="textarea-input" class=" form-control-label">Instructions</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="prod_instr" id="textarea-input" rows="9" placeholder="User instructions..." class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Max Rent Period</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" name="rent_prid" placeholder="Max time" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Rent Amount</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" name="rent_amt" placeholder="Amount" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">Rent Per</label>
+                                        </div>
+                                        <div class="col col-md-9">
+                                            <div class="form-check-inline form-check">
+                                                <label for="inline-radio1" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio1" name="rent_per" value="d" class="form-check-input" required>Day
+                                                </label>
+                                                <label for="inline-radio2" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio2" name="rent_per" value="h" class="form-check-input" required>Hour
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="file-multiple-input" class=" form-control-label">Pick up point</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            
+                                                <input type="text" name="prod_pik">
+                                           
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .animated -->
+            </div><!-- .content -->
+        </div><!-- /#right-panel -->
+        <!-- Right Panel -->
+        
+    
+        
+      <!-- script -->
+    <% include partials/extscript %>
+
+        
+        
+    </body>
+</html>

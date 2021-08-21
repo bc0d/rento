@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Profile</title>
+
+    <% include partials/extlinks %>
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    
+    <!-- ##### Header Area End ##### -->
+
+ 
+    <!-- ##### user Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+        <% 
+            user.forEach(function(user) {
+        %>
+        
+        <!-- user Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="">
+                <img src="<%=user.user_pic %>" alt="" name="usrpic">
+            </div>
+        </div>
+        
+        <!-- user Description -->
+        <div class="single_product_desc clearfix">
+            <h6 name="cat"><span><%=user.privilege %></span></h6>
+            <h2 name="usrnm"><%=user.f_name %> <%=user.s_name %></h2>
+            <p class="product-price" name="mail"><%=user.mail %></p>
+            <p class="product-price" name="phone"><%=user.ph_no %></p>
+            <p class="product-desc" name="addrs"><%=user.address %></p>
+        </div>
+        <%
+            });
+        %>
+    </section>
+    <center class="mt-5">
+        <% user.forEach(function(user) { %>
+        <a href="/usrpro?uid=<%=user.user_id %>" class="btn essence-btn">My products</a>
+        <% }); %>
+    </center>
+    <div class="row ml-5 mt-5">
+        <%
+        if(locals.uid){
+            pdtlist.forEach(function(pdtlist) {
+        %>
+        <div class="col-12 col-md-10 ml-5">
+            <div class="order-details-confirmation">
+                <div class="cart-page-heading">
+                    <ul class="order-details-form mb-4">
+                        <table >
+                            <tr>
+                                <td>
+                                    <h6><%=pdtlist.category %></h6>
+                                </td>
+                                <td>
+                                    <a href="/product?id= <%=pdtlist.prod_id %>"><h6><%=pdtlist.pdt_name %></h6>
+                                    </a>
+                                </td>    
+                                <td>
+                                    <a href="/delete?id=<%=pdtlist.prod_id %>">Delete</a>
+                                </td>
+                                <td>
+                                    <a href="/edit?pid=<%=pdtlist.prod_id %>">Edit</a>
+                                </td>
+                                <td>
+                                    <%if(pdtlist.status == '0') {%>
+                                    Available
+                                    <%} else {%>
+                                    Not Available
+                                    <%}%>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+                </div>     
+            </div>      
+        </div>
+        <%
+            });
+        }
+        %>
+    </div>
+    
+     
+    <!-- ##### user Details Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+<style type="text/css">
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+</style>
+</html>

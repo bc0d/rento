@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Rento</title>
+
+    <% include partials/extlinks %>    
+    <!-- style map-->
+    <style type="text/css">
+        
+    </style>
+    <!-- style map end-->
+
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-10 ml-5">
+                    <div class="order-details-confirmation">
+
+                        <div class="cart-page-heading">
+                            <table>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Order Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                                <%
+                                    trans.forEach(function(trans){
+                                %>
+                                <tr>
+                                    <td><%=trans.prod_name%></td>
+                                    <td><%=trans.order_date%></td>
+                                    <td><%=trans.amount%></td>
+                                </tr>
+                                <%
+                                    })
+                                %>
+                            </table>
+                        </div>
+                         
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+   
+
+</body>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+</html>

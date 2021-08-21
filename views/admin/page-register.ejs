@@ -1,0 +1,100 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RENTO Sign Up</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% include partials/exturl %>
+
+
+
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <h3 style="color: aliceblue;">RENTO</h3>
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form action="/register" method="post">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="fname" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Second Name</label>
+                            <input type="text" class="form-control" name="sname" placeholder="Second Name" required>
+                        </div>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" name="mail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input type="number" class="form-control" name="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" id="ps" required>
+                        </div>
+                        <!-- for checking password-->
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" name="pass" placeholder="Password" id="cps" required>
+                        </div>
+                        
+                        <div class="checkbox">
+                            <input type="checkbox" value="agree" name="lc" >
+                            <label> Agree the terms and policy
+                            </label>
+                        </div>
+                        
+                        
+                        <input type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" value="Register">
+                        
+                        <div class="register-link m-t-15 text-center">
+                            <p>Already have account ? <a href="#"> Log in</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+         
+          <!-- script -->
+    <% include partials/extscript %>
+
+
+</body>
+<script type="text/javascript">
+    var ps = document.getElementById("ps");
+    var cps = document.getElementById("cps");
+    function validatePassword() {
+        if (ps.value != cps.value) {
+            cps.setCustomValidity("Password Don't Match");
+        }
+        else {
+            cps.setCustomValidity('');
+        }
+    }
+    ps.onchange = validatePassword;
+    cps.onkeyup = validatePassword;
+    </script>
+</html>

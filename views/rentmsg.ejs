@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Rento</title>
+
+    <% include partials/extlinks %>    
+    <!-- style map-->
+    <style type="text/css">
+        
+    </style>
+    <!-- style map end-->
+
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-10 ml-5">
+                    <div class="order-details-confirmation">
+
+                        <div class="cart-page-heading">
+                            <input type="hidden" name="rid" value="<%=rid%>">
+                            <h5>Your Request for 'product' has been acceped</h5>
+                            <p>
+                                Renter Details
+                                <table>
+                                    <%renter.forEach(function(renter){%>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td><%=renter.f_name%>&nbsp;<%=renter.s_name%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact</th>
+                                        <td><%=renter.phone%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Address</th>
+                                        <td><%=renter.address%></td>
+                                    </tr>
+                                    <%})%>
+                                </table>
+                            </p>
+                        </div>
+                         
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+   
+
+</body>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+
+
+</html>

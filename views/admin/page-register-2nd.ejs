@@ -1,0 +1,80 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rento registration 2</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% include partials/exturl %>
+
+
+
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <h3 style="color: aliceblue;">RENTO</h3>
+                    </a>
+                </div>
+                <div class="login-form">
+                    
+                    <form action="/register2" method="post" enctype="multipart/form-data">  
+                        <input type="hidden" name="id" value="<%= userid %>">
+                        <div class="form-group">
+                                <label for="file">Photo</label>
+                                <input type="file" name="user_pic" class="form-control" id="pic1" required>
+                        </div>
+                        <div class="form-group">
+                                <label for="file">ID [front]</label>
+                                <input type="file" name="id_front" class="form-control" id="id1" required>
+                        </div>
+                        <div class="form-group">
+                                <label for="file">ID [back]</label>
+                                <input type="file" name="id_back" class="form-control" id="id2" required>
+                        </div>
+                        <div class="form-group">
+                                <label>Adress</label>
+                                <textarea rows="5" cols="50" class="form-control" name="address" required></textarea>
+                        </div> 
+                        <div class="form-group">
+                            <label>
+                                Privilege&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </label>
+                                <input type="radio" name="user_cat" value="r" required>&nbsp;Renter&nbsp;&nbsp;
+                                <input type="radio" name="user_cat" value="b" required>&nbsp;Buyer
+                            
+                        </div>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" >Submit</button>
+                    </form>
+                                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+         
+          <!-- script -->
+    <% include partials/extscript %>
+
+
+</body>
+    <script type="text/javascript">
+        
+    </script>
+
+</html>

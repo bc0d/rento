@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Profile</title>
+
+    <% include partials/extlinks %>
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- ##### user Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+        <% 
+            user.forEach(function(user) {
+        %>
+        <!-- user Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+                <img src="<%=user.userpic %>" alt="" name="usrpic">
+            </div>
+        </div>
+        
+        <!-- user Description -->
+        <div class="single_product_desc clearfix">
+            <h6 name="cat"><span><%=user.privilege %></span></h6>
+            <h2 name="usrnm"><%=user.f_name %> <%=user.s_name %></h2>
+        </div>
+        <%
+            });
+        %>
+    </section>
+    <div class="section-heading text-center">
+       <h4>Other products are</h4>
+    </div>
+    <div class="row ml-5 mt-5">
+        <%
+            pdtlist.forEach(function(pdtlist) {
+        %>
+                            <!-- Single Product -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                <div class="product-img">
+                    <img src="img/product-img/product-1.jpg" alt="">
+                            <!-- Hover Thumb -->
+                    <img class="hover-img" src="img/product-img/product-2.jpg" alt="">
+                            <!-- Product Badge -->
+                    <div class="product-badge offer-badge">
+                        <span>-30%</span>
+                    </div>
+                            <!-- Favourite -->
+                    <div class="product-favourite">
+                        <a href="#" class="favme fa fa-heart"></a>
+                    </div>
+                </div>
+                            <!-- Product Description -->
+                <div class="product-description">
+                    <span><%=pdtlist.category %></span>
+                    <a href="/product?id= <%=pdtlist.prod_id %>">
+                        <h6><%=pdtlist.pdt_name %></h6>
+                    </a>
+                    <p class="product-price"><span class="old-price">$75.00</span> <%=pdtlist.rent_amt %></p>
+                            <!-- Hover Content -->
+                    <div class="hover-content">
+                            <!-- Add to Cart -->
+                        <div class="add-to-cart-btn">
+                            <a href="#" class="btn essence-btn">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%
+            });
+        %>
+    </div>
+    
+     
+    <!-- ##### user Details Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+
+</html>

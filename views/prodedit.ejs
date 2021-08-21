@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Rento</title>
+
+    <% include partials/extlinks %>    
+    <!-- style map-->
+    <style type="text/css">
+        
+    </style>
+    <!-- style map end-->
+
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <% include partials/clienthead %>
+    <!-- ##### Header Area End ##### -->
+
+ 
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Add Product</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-10 ml-5">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="cart-page-heading mb-30">
+                            <h5>Add Form</h5>
+                        </div>
+
+                        <form action="/test" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <input type="hidden" value="<%=pid%>" name="pid">
+                                <% old.forEach(function(old) {%>
+                                <div class="col-12 mb-3">
+                                    <label for="category">Category <span>*</span></label>
+                                    <select class="w-100" id="category" name="cate" required>
+                                        <option value="veh"
+                                                <%= (old.category == 'veh') ? 'selected' : '' %>>Vehicles</option>
+                                        <option value="elc" <%= (old.category == 'elc') ? 'selected' : '' %>>Electronics</option>
+                                        <option value="mac" <%= (old.category == 'mac') ? 'selected' : '' %>>Machinery</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="product">Product Name <span>*</span></label>
+                                    <input type="text" class="form-control" id="product" name="prod_name" value="<%=old.pdt_name%>" required>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <label for="description">Description </label>
+                                        <textarea class="form-control" id="description" rows="6" name="prod_desc" value=""><%=old.descr%></textarea>
+                                </div>
+                                 <!--file input start-->
+                                <!--file input end-->
+                                <div class="col-12 mb-3">
+                                    <label for="instruction">Instructions </label>
+                                    <textarea type="text" class="form-control mb-3" id="instr1" name="prod_instr" value=""><%=old.instr%></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="maxrntprd">Max Rent Period <span>*</span></label>
+                                    <input type="text" class="form-control" id="maxrntprd" name="rent_prid" value="<%=old.max_rent_prd%>" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="rntamt">Rent Amount <span>*</span></label>
+                                    <input type="text" class="form-control" id="rntamt" name="rent_amt" value="<%=old.rent_amt%>" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="category">Rent per <span>*</span></label>
+                                    <select class="w-100" id="category" name="rent_per" required>
+                                        <option>-select-</option>
+                                        <option value="hour" <%= (old.rent_per == 'hour') ? 'selected' : '' %>>Hour</option>
+                                        <option value="day" <%= (old.rent_per == 'day') ? 'selected' : '' %>>Day</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="pikup">Pick Up Point </label>
+                                    <input type="text" class="form-control" id="pikup" placeholder="the local place" name="prod_pik" value="<%=old.pickup_point%>">
+                                </div>
+                                <!-- -->
+                                
+
+                                <div class="col-12 mb-3">
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox"  name="status" value="1"  <%= (old.status == '1') ? 'checked' : '' %> required>
+                                        <label  for="customCheck1">Not Available</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-3 ml-5 ">
+                                        <input class="btn essence-btn" type="submit" value="Add Product">
+                                </div>
+                            </div>
+                            <%
+                            });
+                            %>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+ 
+    <!-- ##### Footer Area Start ##### -->
+    <% include partials/clientfoot %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    
+</body>
+
+</html>

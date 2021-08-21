@@ -1,0 +1,144 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RENTO ADMIN</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% include partials/exturl %>
+    
+    <style type="text/css">
+        .aprpic {
+            float :left;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Left Panel -->
+
+    <% include partials/sidepanel %>
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <% include partials/header %>
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Aprove Product</strong>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Product ID</th>
+                                            <th scope="col">Product Name</th>
+                                            <th scope="col">Catogary</th>
+                                            <th scope="col">Renter ID</th> 
+                                            <th scope="col">MRP</th>
+                                            <th scope="col">RA</th>
+                                            <th scope="col">RP</th>
+                                            <th scope="col">Desc</th>
+                                            <th scope="col">Instr</th>
+                                            <th scope="col">IMG 1</th>
+                                            <th scope="col">IMG 2</th>
+                                            <th scope="col">IMG 3</th>
+                                            <th scope="col">IMG 4</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Not availabe</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% 
+                                            pdt.forEach(function(pdt) {
+                                        %>
+                                        <tr>
+                                            <form action="aprov" method="post">
+                                            <th><input type="hidden" name="pid" value="<%=pdt.prod_id %>"> <%=pdt.prod_id %></th>
+                                            <td><%=pdt.pdt_name %></td>
+                                            <td><%=pdt.category %></td>
+                                            <td><%=pdt.renter_id %></td>
+                                            <td><%=pdt.max_rent_prd %></td>
+                                            <td><%=pdt.rent_amt %></td>
+                                            <td><%=pdt.rent_per %></td>
+                                            <td><%=pdt.descr %></td>
+                                            <td><%=pdt.instr %></td>
+                                            <td><%=pdt.pic1 %></td>   
+                                            <td><%=pdt.pic2 %></td>
+                                            <td><%=pdt.pic3 %></td>
+                                            <td><%=pdt.pic4 %></td>
+                                            <td><%=pdt.pickup_point %></td>
+                                            <td>
+                                                <input type="checkbox" name="status" value="1" <%= (pdt.status == '1') ? 'checked' : '' %>>
+                                            </td>
+                                            <td>
+                                                <input type="submit" class="btn btn-primary" value="update">
+                                            </td>
+                                            </form>
+                                        </tr>
+                                        <%
+                                            });
+                                        %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+    <!-- Right Panel -->
+
+      <!-- script -->
+    <% include partials/extscript %>
+
+
+</body>
+
+</html>
